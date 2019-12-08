@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 格好いいVのロゴは残す。 -->
     <img alt="Vue logo" src="./assets/logo.png">
     <add-todo/>
     <todo-list/>

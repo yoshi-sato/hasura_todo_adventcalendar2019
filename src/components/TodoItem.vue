@@ -5,6 +5,8 @@
 <script>
 import gql from 'graphql-tag'
 
+// GraphQLクエリを作成します。DELETEなのでmutationです。
+// idが一致するレコードを削除し、返り値として削除したレコード数を返します。
 const REMOVE_TODO = gql`
     mutation removeTodo(
         $id: Int!
@@ -26,6 +28,7 @@ export default {
                 variables: {
                     id
                 },
+                // DELETEした後画面をリロードしなくても良いように、TodoListで作ったクエリを自動で実行します。
                 refetchQueries: ["getTodos"]
             });            
         }

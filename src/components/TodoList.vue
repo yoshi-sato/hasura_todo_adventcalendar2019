@@ -8,6 +8,8 @@
 import TodoItem from './TodoItem.vue';
 import gql from 'graphql-tag';
 
+// GETするだけのGrahpQLクエリです。
+// idも返すように要求しますが、今回は使っていません。
 const GET_TODOS = gql`
     query getTodos {
         todos {
@@ -27,6 +29,7 @@ export default {
             todos: []
         } 
     },
+    // apolloで実行するクエリを指定します。
     apollo: {
         todos: {
             query: GET_TODOS
