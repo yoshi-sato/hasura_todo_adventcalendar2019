@@ -37,13 +37,14 @@ export default {
         submit(e) {
             e.preventDefault();
             const { title } = this.$data;
-				this.$apollo.mutate({
-					mutation: ADD_TODO,
-					variables: {
-						title
-					},
-					refetchQueries: ["getTodos"]
-				});
+            this.$apollo.mutate({
+                mutation: ADD_TODO,
+                variables: {
+                    title
+                },
+                refetchQueries: ["getTodos"]
+            });
+            this.$data.title = "";
         }
     }
 }
