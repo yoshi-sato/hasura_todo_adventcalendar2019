@@ -1,5 +1,5 @@
 # todo_hasura
-
+アドカレ2019のやつです。
 ## Project setup
 ```
 yarn install
