@@ -6,21 +6,31 @@
 
 <script>
 import TodoItem from './TodoItem.vue';
+import gql from 'graphql-tag';
+
+const GET_TODOS = gql`
+    query getTodos {
+        todos {
+            id
+            title
+        }
+    }
+`
 
 export default {
     name: 'TodoList',
-    data() {
-        return {
-            todos: [
-                {
-                    id:1,
-                    title:'test'
-                }
-            ]
-        } 
-    },
     components: {
         TodoItem
+    },
+    data() {
+        return {
+            todos: []
+        } 
+    },
+    apollo: {
+        todos: {
+            query: GET_TODOS
+        }
     }
 }
 </script>
